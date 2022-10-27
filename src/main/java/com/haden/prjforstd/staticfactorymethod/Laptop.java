@@ -34,8 +34,21 @@ public class Laptop {
 
     public static Laptop from(LaptopForm laptopForm){
         Laptop laptop = new Laptop();
-        laptop.model = laptopForm.getName(); //지금은 두 개밖에 없으니까 get을 하는 게 편해보이나 만약에 var이 늘어나면?
+        laptop.model = laptopForm.getName();
         laptop.company = laptopForm.getCorp();
         return laptop;
     }
+
+    public static Laptop ofCompanyEnum(LaptopForm laptopForm, CompanyEnum companyEnum){
+        Laptop laptop = new Laptop();
+        if(companyEnum==CompanyEnum.APPLE){
+            laptop.model = laptopForm.getName();
+            laptop.company = laptopForm.getCorp();
+        }
+        else if(companyEnum==CompanyEnum.SAMSUNG){
+            laptop.model = laptopForm.getName();
+        }
+        return laptop;
+    }
+
 }
