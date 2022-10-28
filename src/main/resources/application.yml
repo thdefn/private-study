@@ -18,3 +18,6 @@ spring:
       ddl-auto: update
     admin: haden
 
+zerobase:
+  address: "서울시 강남구"
+

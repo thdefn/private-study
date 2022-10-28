@@ -1,0 +1,5 @@
+Resource를 직접 명시하지 말고, Dependecy Injection을 사용하라
+
+Config Class 를 생각없이 사용하고 있지는 않았는지
+Singleton을 이해하고 있는지
+Dependency Injection을 잘 이해하고 있는지 : 결국에는 외부에서 그냥 갖다 주입하는것
