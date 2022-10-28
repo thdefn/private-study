@@ -1,9 +1,8 @@
 package com.haden.prjforstd;
 
 import com.haden.prjforstd.singleton.AnotherSpeaker;
-import com.haden.prjforstd.singleton.Speaker;
-import com.haden.prjforstd.staticfactorymethod.Laptop;
-import com.haden.prjforstd.staticfactorymethod.LaptopForm;
+import com.haden.prjforstd.staticFactoryMethod.Laptop;
+import com.haden.prjforstd.staticFactoryMethod.LaptopForm;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

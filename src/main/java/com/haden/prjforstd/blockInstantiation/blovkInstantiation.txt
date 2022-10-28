@@ -1,0 +1,5 @@
+Instance화를 막으려면 private constructor를 사용하자
+
+누군가를 믿지 못할 상황이 있고, Human error를 방지하기 위해 private constructor를 권장한다.
+
+BUT Util Class 처럼 관용적으로 Instance화를 하지 않을거라고 우리가 모두 알고 있는 경우 생략하기도 함
