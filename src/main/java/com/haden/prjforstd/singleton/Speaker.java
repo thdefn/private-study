@@ -37,6 +37,13 @@ public class Speaker {
         return instance;
     }
 
+    /*public static Speaker getInstance(){
+        if(instance == null){
+            instance = new Speaker();
+        }
+        return instance;
+    }*/
+
     //처음 서비스를 띄우는 상황
     //인스턴스에 null이 들어가 있음
     // 이제 DB 연결이 필요할 것 같아 - DB와 연결된 인스턴ㅅ 필요 > 그 때 getINstance() 호출시 그때만 커넥션 생성이 가능함
