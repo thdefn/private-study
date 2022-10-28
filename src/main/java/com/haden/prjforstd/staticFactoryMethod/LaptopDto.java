@@ -1,4 +1,4 @@
-package com.haden.prjforstd.staticfactorymethod;
+package com.haden.prjforstd.staticFactoryMethod;
 
 public class LaptopDto {
     private String modelName;
