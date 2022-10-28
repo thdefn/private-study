@@ -1,9 +1,12 @@
 package com.haden.prjforstd;
 
+import com.haden.prjforstd.singleton.AnotherSpeaker;
+import com.haden.prjforstd.singleton.Speaker;
 import com.haden.prjforstd.staticfactorymethod.Laptop;
 import com.haden.prjforstd.staticfactorymethod.LaptopForm;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,5 +36,21 @@ public class AnotherController {
         //한 줄이면 충분하고 가독성이 좋음
         Laptop laptop = Laptop.from(laptopForm);
         return laptop;
+    }
+
+   @GetMapping("/singleton")
+    public AnotherSpeaker getSpeaker(){
+        //speaker을 getInstance를 통해 세팅을 함
+        AnotherSpeaker speaker = AnotherSpeaker.INSTANCE.getInstance();
+        speaker.setMessage("안내 방송 중입니다.");
+
+        //speaker2에서 인스턴스를 가져와봄
+        AnotherSpeaker speaker2 = AnotherSpeaker.INSTANCE;
+
+        //둘이 동일한 결과
+        System.out.println(speaker.getMessage());
+        System.out.println(speaker2.getMessage());
+
+        return speaker;
     }
 }

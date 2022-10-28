@@ -9,15 +9,9 @@ import java.sql.*;
 @Component
 public class ProductTempRepository {
 
-    private final String dbUrl;
-    private final String dbId;
-    private final String dbPassword;
-
-    public ProductTempRepository(String dbUrl, String dbId, String dbPassword) {
-        this.dbUrl = dbUrl;
-        this.dbId = dbId;
-        this.dbPassword = dbPassword;
-    }
+    private final String dbUrl="";
+    private final String dbId="";
+    private final String dbPassword="";
 
     public void createProduct(Product product) throws SQLException {
         Connection connection = getConnection();
