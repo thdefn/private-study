@@ -34,7 +34,7 @@ public class TrywithResources {
     static void copy(String src, String dst) throws IOException {
         InputStream in = new FileInputStream(src);
         try{
-            OutputStream out = new FileOutputStream(src);
+            OutputStream out = new FileOutputStream(dst);
             try {
                 byte[] buf = new byte[100];
                 int n;
