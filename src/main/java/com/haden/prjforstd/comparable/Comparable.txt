@@ -1,0 +1,10 @@
+Comparable을 구현할지 고려하라
+
+
+객체와 주어진 객체의 순서를 비교함
+같으면 0 작으면 음의 정수 크면 양의 정수
+비교할 수 없을 땐 ClassCastException
+
+
+필요하다면 적절하게 Comparable을 구현하여 compareTo의 이점을 누릴 수 있다
+하지만 정렬의 기준이 고정적이 아니라면 다른 방식을 고려해볼 수 있다 (ex Method, Service를 통한 조건별 Ordering을 고려할 수 있다)
