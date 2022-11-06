@@ -1,6 +1,5 @@
 package com.haden.prjforstd.hashCode;
 
-import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode
