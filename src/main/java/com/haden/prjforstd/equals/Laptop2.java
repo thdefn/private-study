@@ -1,7 +1,10 @@
 package com.haden.prjforstd.equals;
 
+import lombok.Setter;
+
 import java.util.Objects;
 
+@Setter
 public class Laptop2 {
     private String model;
 
@@ -29,4 +32,5 @@ public class Laptop2 {
     public int hashCode() {
         return Objects.hash(model, company);
     }
+
 }

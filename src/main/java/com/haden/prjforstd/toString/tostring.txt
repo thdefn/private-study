@@ -1,0 +1,11 @@
+toString을 항상 override 하라
+
+toString의 default value : className@(16진수 hashcode)
+toString의 일반 규약 : 객체의 주요 정보를 반환하는 것을 추천
+오히려 모두 반환을 하며 필요없는 정보가 올 수 있고 너무 길어져서 정보의 과부하로 가독성 낮아짐
+toString을 재정의할때 format 그 의도에 대해 명확하게 밝혀라
+
+1. 로그를 찍을 일이 있을 것 같으면 귀찮아하지말고 toString을 overriding 하자
+2. 전부 다 toString으로 찍지 말고 필요한 것위주로 작성하라
+3. Lombok은 toString으로 만들기 귄찮은 개발자들이 성실하게 toString을 구현할 수 있도록 유인할 수 있다
+4. Lombok 사용시 주요 옵션은 공식 홈페이지에서 확인할 것
