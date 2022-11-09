@@ -1,0 +1,7 @@
+상속보다는 컴포지션을 사용하라
+
+책에서는 상속보다는 composite 패턴을 추천함
+
+상속은 캡슐화를 해칠 수 있기 때문에 pure한 is-a 관계일때만 써야한다
+james gosling 또한 여러 지점에서 상속에 대해 warn하는 모습들이 꼬 ㅐ있었다
+Wrapper Class(composite pattern) 가 class를 확장하여 사용하는 것보다 더 견고하다.
