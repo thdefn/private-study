@@ -15,9 +15,20 @@ spring:
         dialect: org.hibernate.dialect.H2Dialect
         format_sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     admin: haden
+    generate-ddl: true
+
 
 zerobase:
   address: "서울시 강남구"
+
+haden:
+  admintoken: "AAABnv/xRVklrnYxKZ0aHgTBcXukeZygoC"
+
+logging:
+  level:
+    org.hibernate:
+      SQL: debug
+      type.descriptor.sql: trace
 
