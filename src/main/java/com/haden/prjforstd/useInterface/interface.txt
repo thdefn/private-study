@@ -1,0 +1,27 @@
+Abstract class 보다는 interface를 우선하라
+
+머릿속에서 항상 interface를 먼저 떠올리자
+뼈대를 만들때에는 default method가 대안이 될 수 있다
+
+
+Extends vs implements
+
+클래스의 확장 extends는 하나만 가능하다
+interface의 구현은 여러개가 가능함
+
+Default method의 Diamond 문제 주의
+Packable - Delibariable 에 order라는 default method가 둘 다 존재한다고 가정
+이 경우 Restraunt에서  인터페이스를 구현하려고 하면 에러 발생
+: Duplicate default methods named order with the parameters() and () are inherited form the types Deribariabl Interface and Packable Interface
+중복된 같은 디폴트 메서드가 존재해서 어떤ㄱ ㅓㄹ 오버라이드해야할지 모르겠어ㅠ
+
+디폴트 메서드가 아닌 상태면 동일 이름이어도 괜찮긴 함
+
+Skeletal implementation 추상 골격 구현
+interface와 Abstract Class 의 장점을 모두 취하는 방법
+
+1. interface로 뼈대를 만들고
+2. Abstract class로 필요한 ㄱ현을 모두 마친 후
+3. Subclass로 마무리 하는 것
+
+주의사항 : Object method equals toString은 디폴트 메서드로 제공하면 안됨

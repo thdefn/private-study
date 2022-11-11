@@ -1,8 +1,10 @@
 package com.haden.prjforstd.inherit;
 
+import java.io.Serializable;
 import java.time.Instant;
 
-public class Sub extends Super{
+public class Sub extends Super implements Serializable, Cloneable {
+    // Sub이라는 클래스는 Super을 확장해서 사용하고 Serializable이나 Clonealbe을 구현한다
     private final Instant instant;
 
     public Sub() {
