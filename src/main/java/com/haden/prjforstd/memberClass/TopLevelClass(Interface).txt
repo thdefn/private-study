@@ -1,0 +1,11 @@
+톱레벨 클래스는 한 파일에 하나만 담아라
+
+A top level class is a class that is not a nested class
+
+Top level class (interface) 는 한 파일에 하나만 담아라
+
+public class가 파일에 하나만 가능하다고 해서 public 이 아닌 top level class를 여러개 한 파일에 넣지 말자
+> 만약 한 파일 안에 여러개의 클래스를 사용해야 한다면? : nested class or 파일 분리
+
+컴파일러가 한 클래스에 대한 여러 정의를 만드는 것을 만들 수 있다
+즉 컴파일러가 어느 순서로 컴파일을 하던 일관성이 유지된다
