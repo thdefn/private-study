@@ -2,7 +2,6 @@ package com.haden.prjforstd.memberClass;
 
 import lombok.Data;
 
-@Data
 public class User {
     // member class는 nested class의 일종: 클래스 안에 클래스가 있는 것이 네스티드 클래스
     /* nested 되어 있는 멤버 클래스는 독립적으로 존재할 수 없으며
@@ -12,7 +11,6 @@ public class User {
     private String name;
     private Address address;
 
-    @Data
     public class Address{
         String zipcode;
     }

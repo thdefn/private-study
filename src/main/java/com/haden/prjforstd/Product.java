@@ -28,7 +28,14 @@ public class Product {
     @Column(nullable = false)
     private int price;
 
+
     public Product(ProductRequestDto requestDto) {
+        if(requestDto.getTitle() == null || requestDto.getTitle().isEmpty()){
+            throw new IllegalArgumentException("상품명이 없습니다");
+        }
+        if(requestDto.getPrice() <= 0){
+            throw new IllegalArgumentException("상품 최저가가 0 이하입니다");
+        }
         this.title = requestDto.getTitle();
         this.image = requestDto.getImage();
         this.link = requestDto.getLink();
