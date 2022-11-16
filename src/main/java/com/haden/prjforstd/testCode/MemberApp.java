@@ -1,4 +1,4 @@
-package com.haden.prjforstd;
+package com.haden.prjforstd.testCode;
 
 import com.haden.prjforstd.testCode.Grade;
 import com.haden.prjforstd.testCode.Member;
