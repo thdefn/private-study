@@ -23,6 +23,10 @@ public class Raw {
         return 1;
     }
 
+    private static void unsafeAdd(List list, Object o){
+        list.add(o);
+    }
+
     public static void main(String[] args) {
         // 비권장 코드 : 만약 type parameter가 없다면?
         List test = new ArrayList(); //test라는 리스트 객체를 만듦 타입 파라미터를 명시하지 않았기 때문에 Object로 간주
@@ -30,13 +34,18 @@ public class Raw {
         test.add(1);
         // String과 int를 둘 다 담을 수 있음
 
+        String s1 = (String) test.get(0);
+
+        System.out.printf(s1);
+
         // 다만 객체의 타입을 추측하기 어려워서 generic이 주는 타입의 안정성을 잃을 수 있음
         // add만 했기 때문에 현ㅈ는 에러 발생 x BUT typecasting을 해서 메서드에 넣는다면 에러가 발생할 가능성
 
-
         //예외적으로 raw를 사용할 때
         //1. Class 리터럴에는 raw type을 써야함
-        //List.class
+        if(List.class == List.class){
+            //
+        }
 
         //2. 런타임시 제네릭 타입 정보가 지워지기 때문에 다음과 같이 체크
         List<String> a = new ArrayList<>(); // List<E>의 정보가 실제 런타임에는 지워짐 그래서 와일드 카드 타입으로 나눈다
@@ -48,6 +57,10 @@ public class Raw {
                 }
             }
         }
+
+        // ClassCastException
+        /*unsafeAdd(a, 42);
+        String s2 = a.get(0);*/
 
     }
 }

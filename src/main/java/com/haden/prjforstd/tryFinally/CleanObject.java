@@ -1,7 +1,5 @@
 package com.haden.prjforstd.tryFinally;
 
-import jdk.internal.ref.Cleaner;
-import jdk.internal.ref.CleanerImpl;
 
 public class CleanObject implements AutoCloseable{
 
