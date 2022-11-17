@@ -1,5 +1,6 @@
 package com.haden.prjforstd.generic;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.UnaryOperator;
 
@@ -13,6 +14,13 @@ public class Operator {
     public static <T> UnaryOperator<T> indentifyFuntion(){
         return (UnaryOperator<T>) IDENTIFY_FN; // 타입캐스팅으로 리스폰스
         //object는 제너릭으로 캐스팅되지 않음, 유형이 다르기 때문에 에러 발생
+        // 이와 같이 Object 타입을 사용하면 모든 종류의 자바 객체를 저장할 수 있다는 장점은 있지만, 저장할 때 타입 변환이 발생하고, 읽어올 때도 타입 변환이 발생합니다.
+    }
+
+    public static void main(String[] args) {
+        List list = new ArrayList();
+        list.add("h1");
+        String s = (String) list.get(0);
     }
 
 }
