@@ -1,5 +1,6 @@
 package com.haden.prjforstd.generic;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -42,6 +43,18 @@ public class Stack<E> {
     }
 
     public static void main(String[] args) {
+
+
+        //공변성
+        /*Object[] objects = new Long[10];
+        objects[0] = "hi";
+
+        //불공변성
+        List<Object> objectList = List.of(1,2);
+        objectList.add("1");
+        */
+
+
         // Integer, Long, Double 등 박싱 타입은 Number을 확장함
         Stack<Number> numberStack = new Stack<>(); // 넘버 타입을 가지는 스택 생성
         Iterable<Integer> integers = List.of(1,2); // 인티저는 넘버 타입을 가지고 있으니 아무 문제 없는 거 아닌가?
