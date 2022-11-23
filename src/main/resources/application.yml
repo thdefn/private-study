@@ -25,6 +25,7 @@ zerobase:
 
 haden:
   admintoken: "AAABnv/xRVklrnYxKZ0aHgTBcXukeZygoC"
+  jwtSecret: "mySecret"
 
 logging:
   level:

@@ -17,7 +17,7 @@ public class HelloController {
         return "hello-visit";
     }
 
-    @GetMapping("/static")
+    @GetMapping
     public String staticEntry(){
         return "redirect:/hello.html";
     }

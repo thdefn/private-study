@@ -1,28 +1,39 @@
 package com.haden.prjforstd;
 
+import com.haden.prjforstd.security.JwtUtil;
+import com.haden.prjforstd.security.TokenDto;
+import com.haden.prjforstd.security.UserDetailsImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class UserController {
     @Autowired
     private final UserService userService;
 
+    @Autowired
+    JwtUtil jwtUtil;
+
     public UserController(UserService userService) {
         this.userService = userService;
     }
 
-    @PostMapping("/user/signup")
+    @PostMapping("/auth/signup")
     public ResponseEntity registerUser(@RequestBody SignupForm form){
         return ResponseEntity.ok(userService.registerUser(form));
     }
 
+    @PostMapping("/auth/signin")
+    public ResponseEntity loginUser(@RequestBody SigninForm form){
+        return ResponseEntity.ok(userService.loginUser(form));
+    }
+
     @GetMapping("/user/search")
-    public ResponseEntity searchUser(){
-        return ResponseEntity.ok(userService.searchUser());
+    public void searchUser(@AuthenticationPrincipal UserDetailsImpl userDetails){
+        System.out.println("username: " +userDetails.getUsername());
+        System.out.println("pwd: " +userDetails.getPassword());
     }
 }

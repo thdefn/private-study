@@ -27,10 +27,10 @@ public class User {
     @Enumerated(value = EnumType.STRING)
     private UserRoleEnum role;
 
-    public static User from(SignupForm form, UserRoleEnum role){
+    public static User from(SignupForm form, String password, UserRoleEnum role){
         User user = new User();
         user.username = form.getUsername();
-        user.password = form.getPassword();
+        user.password = password;
         user.email = form.getEmail();
         user.role = role;
         return user;
