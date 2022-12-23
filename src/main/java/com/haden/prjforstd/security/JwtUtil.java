@@ -15,6 +15,8 @@ public class JwtUtil {
 
     @Value("${haden.jwtSecret}")
     private String jwtSecret;
+
+    private String TOKEN_TYPE = "Bearer ";
     private final long ACCESS_TOKEN_VALID_PERIOD = 1000L*60*30;
     private final long REFRESH_TOKEN_VALID_PERIOD = 1000L*60*60*24*7;
 
@@ -29,6 +31,7 @@ public class JwtUtil {
                 .signWith(SignatureAlgorithm.HS512, jwtSecret)
                 .compact();
 
+
         String refreshToken = Jwts.builder()
                 .setIssuedAt(now)
                 .setExpiration(new Date(now.getTime() + REFRESH_TOKEN_VALID_PERIOD))
@@ -36,7 +39,7 @@ public class JwtUtil {
                 .compact();
 
 
-        return new TokenDto(accessToken, refreshToken, accessTokenExpireIn.getTime());
+        return new TokenDto(TOKEN_TYPE + accessToken, TOKEN_TYPE + refreshToken, accessTokenExpireIn.getTime());
     }
 
     public String getUsername(String token){

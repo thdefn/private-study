@@ -2,7 +2,6 @@ package com.haden.prjforstd;
 
 import com.haden.prjforstd.security.JwtUtil;
 import com.haden.prjforstd.security.TokenDto;
-import com.haden.prjforstd.security.UserDetailsImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -13,20 +12,22 @@ import java.util.Optional;
 
 @Service
 public class UserService {
-    @Autowired
+
     private final UserRepository userRepository;
 
+    private final TokenRefreshRepository tokenRefreshRepository;
     @Value("${haden.admintoken}")
     private String ADMINTOKEN;
-
     @Autowired
     private PasswordEncoder passwordEncoder;
 
     @Autowired
     private JwtUtil jwtUtil;
 
-    public UserService(UserRepository userRepository) {
+    @Autowired
+    public UserService(UserRepository userRepository, TokenRefreshRepository tokenRefreshRepository) {
         this.userRepository = userRepository;
+        this.tokenRefreshRepository = tokenRefreshRepository;
     }
 
     public User registerUser(SignupForm form) {
@@ -56,9 +57,28 @@ public class UserService {
         //유저가 존재하면
         if(passwordEncoder.matches(form.getPassword(), user.getPassword())){ //패스워드 확인 후 맞으면
                 //토큰 발급
-                return jwtUtil.generateToken(user.getUsername());
+                TokenDto dto = jwtUtil.generateToken(user.getUsername());
+                tokenRefreshRepository.save(RefreshToken.of(dto.getRefreshToken(),user));
+                return dto;
         }
 
         throw new IllegalArgumentException("패스워드가 다름");
+    }
+
+    public TokenDto tokenRefresh(TokenRefreshForm form) {
+        RefreshToken token = tokenRefreshRepository.findByUser_Username(form.getUserName()).orElse(null);
+        if(token!= null){
+            if(token.getTokenValue().equals(form.getRefreshToken())){
+                TokenDto dto = jwtUtil.generateToken(token.getUser().getUsername());
+                tokenRefreshRepository.save(token.updateToken(dto.getRefreshToken()));
+                return dto;
+            }
+            else{
+                throw new IllegalArgumentException("refersh 토큰이 다릅니다.");
+            }
+
+        }else{
+            throw new IllegalArgumentException("권한 정보가 없는 유저입니다.");
+        }
     }
 }

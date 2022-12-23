@@ -36,4 +36,9 @@ public class UserController {
         System.out.println("username: " +userDetails.getUsername());
         System.out.println("pwd: " +userDetails.getPassword());
     }
+
+    @PostMapping("/auth/refresh")
+    public ResponseEntity tokenRefresh(@RequestBody TokenRefreshForm form){
+        return ResponseEntity.ok(userService.tokenRefresh(form));
+    }
 }
