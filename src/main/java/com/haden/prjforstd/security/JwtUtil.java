@@ -1,8 +1,7 @@
 package com.haden.prjforstd.security;
 
-import io.jsonwebtoken.JwtException;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
+import com.haden.prjforstd.ResponseCode;
+import io.jsonwebtoken.*;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
@@ -38,8 +37,7 @@ public class JwtUtil {
                 .signWith(SignatureAlgorithm.HS512, jwtSecret)
                 .compact();
 
-
-        return new TokenDto(TOKEN_TYPE + accessToken, TOKEN_TYPE + refreshToken, accessTokenExpireIn.getTime());
+        return TokenDto.of(accessToken, refreshToken, accessTokenExpireIn.getTime());
     }
 
     public String getUsername(String token){

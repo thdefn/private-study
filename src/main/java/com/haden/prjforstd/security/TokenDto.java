@@ -1,12 +1,22 @@
 package com.haden.prjforstd.security;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @Getter
-@RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 public class TokenDto {
-    private final String accessToken;
-    private final String refreshToken;
-    private final Long accessTokenExpireIn;
+    private String accessToken;
+    private String refreshToken;
+    private Long accessTokenExpireIn;
+
+    public static TokenDto of(String accessToken, String refreshToken, Long accessTokenExpireIn){
+        TokenDto tokenDto = new TokenDto();
+        tokenDto.accessToken = accessToken;
+        tokenDto.refreshToken = refreshToken;
+        tokenDto.accessTokenExpireIn = accessTokenExpireIn;
+        return tokenDto;
+    }
 }

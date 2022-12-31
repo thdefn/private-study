@@ -6,6 +6,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class TokenRefreshForm {
-    private String userName;
+    private String username;
     private String refreshToken;
 }

@@ -41,4 +41,9 @@ public class UserController {
     public ResponseEntity tokenRefresh(@RequestBody TokenRefreshForm form){
         return ResponseEntity.ok(userService.tokenRefresh(form));
     }
+
+    @GetMapping("/auth/read")
+    public ResponseEntity readToken(@AuthenticationPrincipal UserDetailsImpl userDetails){
+        return ResponseEntity.ok(userService.readToken(userDetails.getUsername()));
+    }
 }
