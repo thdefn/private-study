@@ -4,6 +4,7 @@ import com.haden.prjforstd.security.JwtUtil;
 import com.haden.prjforstd.security.TokenDto;
 import com.haden.prjforstd.security.UserDetailsImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -43,7 +44,7 @@ public class UserController {
     }
 
     @GetMapping("/auth/read")
-    public ResponseEntity readToken(@AuthenticationPrincipal UserDetailsImpl userDetails){
-        return ResponseEntity.ok(userService.readToken(userDetails.getUsername()));
+    public ResponseEntity readToken(@RequestParam String username){
+        return ResponseEntity.ok(userService.readToken(username));
     }
 }

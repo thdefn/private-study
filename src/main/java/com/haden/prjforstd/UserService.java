@@ -74,6 +74,7 @@ public class UserService {
         if(token!= null){
             if(token.getTokenValue().equals(form.getRefreshToken())){
                 TokenDto dto = jwtUtil.generateToken(token.getUsername());
+                tokenRepository.delete(token);
                 tokenRepository.save(Token.of(token.getUsername(),dto.getRefreshToken()));
                 return dto;
             }
@@ -87,9 +88,9 @@ public class UserService {
     }
 
     @Cacheable(key = "#username", cacheNames = "Token")
-    public ReadTokenDto readToken(String username) {
+    public String readToken(String username) {
         Token token = tokenRepository.findByUsername(username)
                 .orElseThrow(()->new IllegalArgumentException("해당 토큰이 존재하지 않음"));
-        return ReadTokenDto.of(token.getTokenValue());
+        return token.getTokenValue();
     }
 }
