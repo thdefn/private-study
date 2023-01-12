@@ -19,13 +19,14 @@ spring:
         format_sql: true
     hibernate:
       ddl-auto: update
-  cache:
-    type: redis
   redis:
     port: 6379
     host: localhost
     password: 1234
     timeout: 3000
+firebase:
+  project-id: fir-d61fb
+  key-path: fir-d61fb-firebase-adminsdk-58xi7-8db4ff70b2.json
 
 
 zerobase:
