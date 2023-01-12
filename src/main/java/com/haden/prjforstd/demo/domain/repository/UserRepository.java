@@ -1,5 +1,6 @@
-package com.haden.prjforstd;
+package com.haden.prjforstd.demo.domain.repository;
 
+import com.haden.prjforstd.demo.domain.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

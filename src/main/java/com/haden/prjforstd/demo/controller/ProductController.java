@@ -1,6 +1,9 @@
-package com.haden.prjforstd;
+package com.haden.prjforstd.demo.controller;
 
-import lombok.RequiredArgsConstructor;
+import com.haden.prjforstd.demo.domain.entity.Product;
+import com.haden.prjforstd.demo.controller.dto.ProductMypriceRequestDto;
+import com.haden.prjforstd.demo.controller.dto.ProductRequestDto;
+import com.haden.prjforstd.demo.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

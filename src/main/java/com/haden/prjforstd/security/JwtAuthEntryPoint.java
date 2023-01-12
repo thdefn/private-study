@@ -1,6 +1,6 @@
 package com.haden.prjforstd.security;
 
-import com.haden.prjforstd.ResponseCode;
+import com.haden.prjforstd.demo.domain.entity.ResponseCode;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;

@@ -1,4 +1,4 @@
-package com.haden.prjforstd;
+package com.haden.prjforstd.demo.domain.entity;
 
 import lombok.Getter;
 import org.springframework.http.HttpStatus;

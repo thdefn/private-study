@@ -1,13 +1,11 @@
-package com.haden.prjforstd;
+package com.haden.prjforstd.demo.controller.dto;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class SignupForm {
+public class SigninForm {
     private String username;
     private String password;
-    private String email;
-    private String adminToken= "";
 }

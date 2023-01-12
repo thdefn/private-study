@@ -1,8 +1,6 @@
 package com.haden.prjforstd.security;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.haden.prjforstd.User;
-import com.haden.prjforstd.UserRoleEnum;
+import com.haden.prjforstd.demo.domain.entity.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

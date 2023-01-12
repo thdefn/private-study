@@ -1,7 +1,10 @@
-package com.haden.prjforstd;
+package com.haden.prjforstd.demo.service;
 
+import com.haden.prjforstd.demo.controller.dto.ProductMypriceRequestDto;
+import com.haden.prjforstd.demo.controller.dto.ProductRequestDto;
+import com.haden.prjforstd.demo.domain.entity.Product;
+import com.haden.prjforstd.demo.domain.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;

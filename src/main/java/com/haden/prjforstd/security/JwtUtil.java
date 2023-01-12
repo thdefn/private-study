@@ -1,12 +1,9 @@
 package com.haden.prjforstd.security;
 
-import com.haden.prjforstd.ResponseCode;
 import io.jsonwebtoken.*;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Component

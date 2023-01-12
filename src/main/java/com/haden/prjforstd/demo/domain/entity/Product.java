@@ -1,5 +1,6 @@
-package com.haden.prjforstd;
+package com.haden.prjforstd.demo.domain.entity;
 
+import com.haden.prjforstd.demo.controller.dto.ProductRequestDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

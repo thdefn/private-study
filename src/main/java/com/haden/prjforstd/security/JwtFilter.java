@@ -1,6 +1,6 @@
 package com.haden.prjforstd.security;
 
-import com.haden.prjforstd.ResponseCode;
+import com.haden.prjforstd.demo.domain.entity.ResponseCode;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.MalformedJwtException;
 import io.jsonwebtoken.UnsupportedJwtException;

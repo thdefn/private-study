@@ -1,4 +1,4 @@
-package com.haden.prjforstd;
+package com.haden.prjforstd.demo.domain.entity;
 
 import com.sun.istack.NotNull;
 import lombok.Getter;

@@ -1,9 +1,8 @@
-package com.haden.prjforstd;
+package com.haden.prjforstd.demo.domain.repository;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.haden.prjforstd.demo.domain.entity.Product;
 import org.springframework.stereotype.Component;
 
-import javax.security.auth.login.Configuration;
 import java.sql.*;
 
 @Component

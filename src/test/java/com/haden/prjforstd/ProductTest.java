@@ -1,5 +1,7 @@
 package com.haden.prjforstd;
 
+import com.haden.prjforstd.demo.controller.dto.ProductRequestDto;
+import com.haden.prjforstd.demo.domain.entity.Product;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;

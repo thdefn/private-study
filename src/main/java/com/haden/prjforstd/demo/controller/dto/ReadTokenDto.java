@@ -1,4 +1,4 @@
-package com.haden.prjforstd;
+package com.haden.prjforstd.demo.controller.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

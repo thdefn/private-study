@@ -1,5 +1,8 @@
-package com.haden.prjforstd;
+package com.haden.prjforstd.demo.controller;
 
+import com.haden.prjforstd.demo.domain.entity.Product;
+import com.haden.prjforstd.demo.controller.dto.ProductRequestDto;
+import com.haden.prjforstd.demo.service.ProductService;
 import com.haden.prjforstd.singleton.AnotherSpeaker;
 import com.haden.prjforstd.staticFactoryMethod.Laptop;
 import com.haden.prjforstd.staticFactoryMethod.LaptopForm;

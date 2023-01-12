@@ -1,7 +1,7 @@
 package com.haden.prjforstd.security;
 
-import com.haden.prjforstd.User;
-import com.haden.prjforstd.UserRepository;
+import com.haden.prjforstd.demo.domain.entity.User;
+import com.haden.prjforstd.demo.domain.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
