@@ -1,5 +1,9 @@
 package com.haden.prjforstd.testCode;
 
+import com.haden.prjforstd.effectivejava.testCode.Grade;
+import com.haden.prjforstd.effectivejava.testCode.Member;
+import com.haden.prjforstd.effectivejava.testCode.MemberService;
+import com.haden.prjforstd.effectivejava.testCode.MemberServiceImpl;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
